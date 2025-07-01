@@ -1,26 +1,74 @@
-package com.moneytransfer.controller;  // Define the package for this controller
+package com.moneytransfer.controller;
 
-import com.moneytransfer.model.Account;  // Import the Account model class
-import com.moneytransfer.repository.AccountRepository;  // Import the AccountRepository
-import org.springframework.beans.factory.annotation.Autowired;  // Import for dependency injection
-import org.springframework.web.bind.annotation.*;  // Import Spring Web annotations
+import com.moneytransfer.model.Account;
+import com.moneytransfer.repository.AccountRepository;
+import com.moneytransfer.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@RestController  // This annotation marks this class as a REST controller (handles HTTP requests)
-@RequestMapping("/accounts")  // All URLs in this controller will start with "/accounts"
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/accounts")
 public class AccountController {
 
-    @Autowired  // This annotation tells Spring to inject the AccountRepository into this controller
+    @Autowired
     private AccountRepository accountRepository;
 
-    // POST endpoint to create a new account
-    @PostMapping  // Maps HTTP POST requests to the createAccount() method
+    @Autowired
+    private AccountService accountService;  // Inject the service
+
+    // Create a new account
+    @PostMapping
     public Account createAccount(@RequestBody Account account) {
-        return accountRepository.save(account);  // Save the new account and return it
+        return accountRepository.save(account);
     }
 
-    // GET endpoint to fetch an account by its ID
-    @GetMapping("/{id}")  // Maps HTTP GET requests with an ID to the getAccount() method
-    public Account getAccount(@PathVariable Long id) {
-        return accountRepository.findById(id).orElse(null);  // Fetch account by ID or return null if not found
+    // Get all accounts
+    @GetMapping
+    public List<Account> getAllAccounts() {
+        return accountRepository.findAll();
+    }
+
+    // POST /api/accounts/transfer
+    @PostMapping("/transfer")
+    public String transferMoney(@RequestBody TransferRequest request) {
+        return accountService.transferMoney(
+            request.getFromAccountId(),
+            request.getToAccountId(),
+            request.getAmount()
+        );
+    }
+
+    // Simple DTO to represent the request body for transfer
+    static class TransferRequest {
+        private Long fromAccountId;
+        private Long toAccountId;
+        private double amount;
+
+        // Getters and setters
+        public Long getFromAccountId() {
+            return fromAccountId;
+        }
+
+        public void setFromAccountId(Long fromAccountId) {
+            this.fromAccountId = fromAccountId;
+        }
+
+        public Long getToAccountId() {
+            return toAccountId;
+        }
+
+        public void setToAccountId(Long toAccountId) {
+            this.toAccountId = toAccountId;
+        }
+
+        public double getAmount() {
+            return amount;
+        }
+
+        public void setAmount(double amount) {
+            this.amount = amount;
+        }
     }
 }
