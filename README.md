@@ -1,14 +1,14 @@
 # Money Transfer API (Student Project)
 
-This is a simple project for learning how to build REST APIs with Java and Spring Boot 3.x. You can create accounts and send money from one account to another. MySQL is used for the database, and Docker makes it easy to run.
+This is a simple project I made regarding build REST APIs with Java and Spring Boot 3.x. You can create accounts and send money from one account to another. MySQL is used for the database, and Docker makes it easy to run.
 
 ## Features
 - Create accounts
-- Send money from one account to another (with balance checks)
+- Send money from one account to another (with balance checks to ensure that its possible in the first place)
 - Look up a transfer by its ID
 
 ## Why this approach?
-- No authentication (for simplicity)
+- No authentication (for simplicity purposes)
 - Uses Spring Boot 3.x and JPA (with `jakarta.persistence` annotations)
 - Uses Docker for MySQL (no need to install MySQL yourself)
 - Code is kept short and clear for learning
@@ -17,7 +17,7 @@ This is a simple project for learning how to build REST APIs with Java and Sprin
 - No authentication (anyone can use the endpoints)
 - Basic error messages only
 - No listing of all transfers or accounts
-- Not production-ready, just for learning
+- Not production ready
 
 ## Prerequisites
 - Docker (for the database)
