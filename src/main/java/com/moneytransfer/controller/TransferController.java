@@ -19,6 +19,7 @@ public class TransferController {
         this.transferService = transferService;
     }
 
+    // This endpoint creates a new money transfer
     @PostMapping
     public ResponseEntity<?> createTransfer(@RequestBody TransferRequest request) {
         try {
@@ -33,6 +34,7 @@ public class TransferController {
         }
     }
 
+    // This endpoint gets a transfer by its ID
     @GetMapping("/{id}")
     public ResponseEntity<?> getTransfer(@PathVariable Long id) {
         Optional<Transfer> transfer = transferService.getTransfer(id);
@@ -40,6 +42,7 @@ public class TransferController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // This class is used to receive transfer requests from the client
     public static class TransferRequest {
         private Long fromAccountId;
         private Long toAccountId;
