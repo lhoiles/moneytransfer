@@ -1,14 +1,14 @@
 # Money Transfer API (Student Project)
 
-This is a simple project regarding building REST APIs with Java and Spring Boot. The idea is to let you create accounts and send money from one account to another. I used MySQL for the database and Docker to make it easier to run.
+Hi! This is a simple project I made to learn about building REST APIs with Java and Spring Boot. The idea is to let you create accounts and send money from one account to another. I used MySQL for the database and Docker to make it easier to run.
 
 ## What it does
-- You can create accounts 
+- You can create accounts (like for Alice and Bob)
 - You can send money from one account to another (as long as there's enough money)
 - You can look up a transfer by its ID
 
 ## Why I made it this way
-- I didn't add any login or security for simplicity reasons.
+- I didn't add any login or security stuff because the instructions said to keep it simple and pretend it's only used by other programs, not real people.
 - I used Spring Boot and JPA because they make it easier to work with databases.
 - I used Docker for MySQL so I didn't have to install it myself.
 - I tried to keep the code as short and clear as possible.
@@ -24,6 +24,7 @@ This is a simple project regarding building REST APIs with Java and Spring Boot.
 ### What you need
 - Docker (for the database)
 - Java 17 or newer
+- Maven (if the Maven wrapper does not work)
 
 ### Steps
 1. Start the MySQL database:
@@ -31,14 +32,32 @@ This is a simple project regarding building REST APIs with Java and Spring Boot.
    docker-compose up -d
    ```
 2. Build and run the app:
-   ```
-   ./mvnw clean package
-   java -jar target/*.jar
-   ```
+   
+   **Option 1: Using Maven Wrapper (recommended, if it works on your system):**
+   - On Mac/Linux:
+     ```
+     ./mvnw clean package
+     java -jar target/*.jar
+     ```
+   - On Windows:
+     ```
+     .\mvnw.cmd clean package
+     java -jar target/*.jar
+     ```
+
+   **Option 2: Using Global Maven (if the wrapper does not work):**
+   - On any system:
+     ```
+     mvn clean package
+     java -jar target/*.jar
+     ```
+
+   > **Note:** If you get an error about the Maven wrapper not working, just use `mvn clean package` instead. You need Java 17+ and Maven installed.
+
    The app runs on port 8081.
 3. You can run the tests with:
    ```
-   ./mvnw test
+   mvn test
    ```
 4. Or you can try the bash script I wrote to show how it works:
    ```
@@ -68,4 +87,4 @@ This is a simple project regarding building REST APIs with Java and Spring Boot.
 
 ---
 
-If you have any questions or want to give feedback, let me know :) 
+If you have any questions or want to give feedback, let me know! I'm still learning, so any tips are welcome :) 
