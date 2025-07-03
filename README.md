@@ -38,13 +38,13 @@ This will create a MySQL database accessible at `localhost:3306` with the databa
 **Using Global Maven:**
 ```
 mvn clean package
-java -jar target/*.jar
+java -jar target/moneytransfer-0.0.1-SNAPSHOT.jar
 ```
 
 **Or using the Maven Wrapper (if it works on your system):**
 ```
 ./mvnw clean package
-java -jar target/*.jar
+java -jar target/moneytransfer-0.0.1-SNAPSHOT.jar
 ```
 
 The app runs on port **8081** by default (see `application.properties`).
