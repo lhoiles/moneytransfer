@@ -67,12 +67,22 @@ Hi! This is a simple project I made to learn about building REST APIs with Java 
    This will build the app, start it, and use curl to make some example requests.
 
 ## API Endpoints (the URLs you can use)
-- `POST /accounts` — Make a new account
+- `POST /api/accounts` — Make a new account
 - `POST /transfers` — Send money from one account to another
 - `GET /transfers/{id}` — See details about a transfer
 
 ### Example transfer request
 ```
+POST /api/accounts
+{
+  "id": 1,
+  "name": "Alice",
+  "balance": 200.0
+}
+```
+
+```
+POST /transfers
 {
   "fromAccountId": 1,
   "toAccountId": 2,

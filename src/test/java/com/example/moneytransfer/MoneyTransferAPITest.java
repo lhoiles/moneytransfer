@@ -31,13 +31,13 @@ public class MoneyTransferAPITest {
         account1.put("id", 1);
         account1.put("name", "Alice");
         account1.put("balance", 200.0);
-        restTemplate.postForEntity("http://localhost:" + port + "/accounts", account1, String.class);
+        restTemplate.postForEntity("http://localhost:" + port + "/api/accounts", account1, String.class);
 
         Map<String, Object> account2 = new HashMap<>();
         account2.put("id", 2);
         account2.put("name", "Bob");
         account2.put("balance", 50.0);
-        restTemplate.postForEntity("http://localhost:" + port + "/accounts", account2, String.class);
+        restTemplate.postForEntity("http://localhost:" + port + "/api/accounts", account2, String.class);
 
         // Prepare the transfer request body
         Map<String, Object> requestBody = new HashMap<>();
@@ -76,13 +76,13 @@ public class MoneyTransferAPITest {
         account1.put("id", 3);
         account1.put("name", "Charlie");
         account1.put("balance", 300.0);
-        restTemplate.postForEntity("http://localhost:" + port + "/accounts", account1, String.class);
+        restTemplate.postForEntity("http://localhost:" + port + "/api/accounts", account1, String.class);
 
         Map<String, Object> account2 = new HashMap<>();
         account2.put("id", 4);
         account2.put("name", "Dana");
         account2.put("balance", 100.0);
-        restTemplate.postForEntity("http://localhost:" + port + "/accounts", account2, String.class);
+        restTemplate.postForEntity("http://localhost:" + port + "/api/accounts", account2, String.class);
 
         // Prepare the transfer request body
         Map<String, Object> requestBody = new HashMap<>();
