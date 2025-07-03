@@ -1,7 +1,7 @@
-package com.moneytransfer.controller;
+package com.example.moneytransfer.controller;
 
-import com.moneytransfer.model.Transfer;
-import com.moneytransfer.service.TransferService;
+import com.example.moneytransfer.model.Transfer;
+import com.example.moneytransfer.service.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
-package com.moneytransfer.controller;
+package com.example.moneytransfer.controller;
 
-import com.moneytransfer.model.Account;
-import com.moneytransfer.repository.AccountRepository;
-import com.moneytransfer.service.AccountService;
+import com.example.moneytransfer.model.Account;
+import com.example.moneytransfer.repository.AccountRepository;
+import com.example.moneytransfer.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

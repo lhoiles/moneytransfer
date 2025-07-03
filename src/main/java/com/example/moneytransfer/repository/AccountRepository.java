@@ -1,6 +1,6 @@
-package com.moneytransfer.repository;  // Define the package for this repository
+package com.example.moneytransfer.repository;  // Define the package for this repository
 
-import com.moneytransfer.model.Account;  // Import the Account model class
+import com.example.moneytransfer.model.Account;  // Import the Account model class
 import org.springframework.data.jpa.repository.JpaRepository;  // Import JPA repository interface
 
 // The AccountRepository interface extends JpaRepository to provide CRUD operations for Account entities

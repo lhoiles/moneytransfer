@@ -1,4 +1,4 @@
-package com.moneytransfer.model;  // Define the package for this class
+package com.example.moneytransfer.model;  // Define the package for this class
 
 // The @Entity annotation marks this class as an entity that will be mapped to a database table.
 import javax.persistence.Entity;

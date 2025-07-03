@@ -1,6 +1,6 @@
-package com.moneytransfer.repository;
+package com.example.moneytransfer.repository;
 
-import com.moneytransfer.model.Transfer;
+import com.example.moneytransfer.model.Transfer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TransferRepository extends JpaRepository<Transfer, Long> {

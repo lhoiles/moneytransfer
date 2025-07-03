@@ -1,9 +1,9 @@
-package com.moneytransfer.service;
+package com.example.moneytransfer.service;
 
-import com.moneytransfer.model.Account;
-import com.moneytransfer.model.Transfer;
-import com.moneytransfer.repository.AccountRepository;
-import com.moneytransfer.repository.TransferRepository;
+import com.example.moneytransfer.model.Account;
+import com.example.moneytransfer.model.Transfer;
+import com.example.moneytransfer.repository.AccountRepository;
+import com.example.moneytransfer.repository.TransferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
