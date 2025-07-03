@@ -1,8 +1,8 @@
 package com.example.moneytransfer.service;  // Corrected package name
 
-import com.moneytransfer.service.AccountService;
-import com.moneytransfer.model.Account;
-import com.moneytransfer.repository.AccountRepository;
+import com.example.moneytransfer.model.Account;
+import com.example.moneytransfer.repository.AccountRepository;
+import com.example.moneytransfer.service.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
