@@ -68,4 +68,4 @@ This is a simple project regarding building REST APIs with Java and Spring Boot.
 
 ---
 
-If you have any questions or want to give feedback, let me know! I'm still learning, so any tips are welcome :) 
+If you have any questions or want to give feedback, let me know :)
