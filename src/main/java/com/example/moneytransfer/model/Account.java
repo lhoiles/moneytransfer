@@ -1,8 +1,8 @@
 package com.example.moneytransfer.model;  // Define the package for this class
 
 // The @Entity annotation marks this class as an entity that will be mapped to a database table.
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity  // Marks this class as a JPA entity (this will be stored in the database as a table)
 public class Account {
