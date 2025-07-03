@@ -54,12 +54,24 @@ The app runs on port **8081** by default (see `application.properties`).
 mvn test
 ```
 
-### 4. Try the Demo Bash Script
+### 4. Try the Demo Bash Script (Linux/macOS/WSL/Git Bash only)
 ```
 chmod +x run_integration_test.sh
 ./run_integration_test.sh
 ```
-This script builds the app, starts it, and uses curl to make example requests.
+This script builds the app, starts it, and uses curl to make example requests. **This will not work in Windows PowerShell.**
+
+### 5. Manual Integration Test for Windows/PowerShell Users
+If you are on Windows and using PowerShell, you can run the following commands manually after starting the app:
+
+```powershell
+curl.exe -X POST -H "Content-Type: application/json" -d "{\"id\":1,\"name\":\"Alice\",\"balance\":200.0}" http://localhost:8081/accounts
+curl.exe -X POST -H "Content-Type: application/json" -d "{\"id\":2,\"name\":\"Bob\",\"balance\":50.0}" http://localhost:8081/accounts
+curl.exe -X POST -H "Content-Type: application/json" -d "{\"fromAccountId\":1,\"toAccountId\":2,\"amount\":100.0}" http://localhost:8081/transfers
+curl.exe -X GET http://localhost:8081/transfers/1
+```
+
+Copy and paste each line into your PowerShell window. This will create two accounts, perform a transfer, and fetch the transfer details.
 
 ## API Endpoints
 - `POST /api/accounts` — Create a new account
